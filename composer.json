@@ -7,19 +7,31 @@
         "laravel"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:InfyOmLabs/swaggervel.git"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
+        "appointer/swaggervel": "dev-master",
         "doctrine/dbal": "~2.3",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "infyomlabs/adminlte-templates": "^2.0",
+        "infyomlabs/generator-builder": "dev-master",
         "infyomlabs/laravel-generator": "8.0.x-dev",
+        "infyomlabs/swagger-generator": "dev-master",
         "ladumor/one-signal": "^0.3.4",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravel/ui": "3.0",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "munafio/chatify": "^1.2",
+        "santigarcor/laratrust": "^6.3",
+        "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -44,7 +56,8 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": ["app/Helpers/Dropdown.php", "app/Helpers/CreateActivity.php"]
     },
     "autoload-dev": {
         "psr-4": {

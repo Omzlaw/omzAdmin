@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ config('app.name') }}</title>
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" />
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -86,17 +87,17 @@
                     </div>
 
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-block text-white" style="background-color: #F9AF48">Sign In</button>
                     </div>
 
                 </div>
             </form>
 
             <p class="mb-1">
-                <a href="{{ route('password.request') }}">I forgot my password</a>
+                <a href="{{ route('password.request') }}" style="color: #e5101b">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+                <a href="{{ route('register') }}" class="text-center" style="color: #F9AF48">Register a new membership</a>
             </p>
         </div>
         <!-- /.login-card-body -->

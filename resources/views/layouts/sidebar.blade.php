@@ -1,9 +1,23 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<style>
+    .custom-sidebar-bg {
+        background-color: #232820;
+    }
+
+    .nav-sidebar>.nav-item>.nav-link.active {
+        background-color: #eb212d !important;
+    }
+
+
+    .brand-link .brand-image {
+        margin-left: .3rem;
+    }
+
+</style>
+<aside class="main-sidebar sidebar-dark-primary custom-sidebar-bg elevation-4">
     <a href="{{ route('home') }}" class="brand-link">
-        <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
-             alt="{{ config('app.name') }} Logo"
-             class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
+        <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }} Logo"
+            class="brand-image img-circle elevation-3">
+        <span class="brand-text font-weight-light"><strong>OMZ</strong><span>
     </a>
 
     <div class="sidebar">

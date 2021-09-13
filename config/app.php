@@ -165,6 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
+        InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
          * Application Service Providers...
