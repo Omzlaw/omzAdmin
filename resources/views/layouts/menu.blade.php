@@ -6,8 +6,8 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('messenger') }}"
-        class="text-white nav-link {{ Request::is('messenger*') ? 'active' : '' }}">
+    <a href="{{ route('chat') }}"
+        class="text-white nav-link {{ Request::is('chat*') ? 'active' : '' }}">
         <span class="mr-3"><i class="fa fa-envelope"></i></span>
         <p>Messenger</p>
     </a>

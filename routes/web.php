@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -56,5 +57,17 @@ Route::resource('roles-assignment', App\Http\Controllers\RolesAssignmentControll
 
 
 Route::resource('activityLogs', App\Http\Controllers\ActivityLogController::class);
+
+Route::get('chat', function () {    
+    return view('chat/index');
+})->name('chat');
+
+//pwa
+
+Route::get('offline', function () {    
+    return view('vendor/laravelpwa/offline');
+});
+
+
 
 
