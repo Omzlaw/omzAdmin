@@ -1,5 +1,6 @@
 
 # OmzAdmin Template
+- Infyom Admin Template and Generator with many more features
 
 
 ##features
@@ -11,6 +12,7 @@
 - Home Layout with Sidebar
 - Roles and Permission Managment
 - Activity Logging
+- Swagger API
 
 ## Packages Installed
 
