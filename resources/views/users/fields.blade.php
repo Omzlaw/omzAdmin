@@ -22,9 +22,14 @@
     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
 </div>
 
-<!-- Profile Picture Field -->
+
 <div class="form-group col-sm-6">
-    {!! Form::label('profile_picture', 'Profile Picture') !!}
-  {!! Form::file('profile_picture', ['class' => 'form-control']) !!}
+    {!! Form::label('profile_picture', 'Profile Picture:') !!}
+    <div class="input-group">
+        <div class="custom-file">
+            {!! Form::file('profile_picture', ['class' => 'custom-file-input']) !!}
+            {!! Form::label('profile_picture', 'Upload File', ['class' => 'custom-file-label']) !!}
+        </div>
+    </div>
 </div>
 

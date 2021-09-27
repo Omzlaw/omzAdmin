@@ -12,12 +12,28 @@
         margin-left: .3rem;
     }
 
+    .brand-link {
+        border-bottom: none !important;
+        text-align: center;
+    }
+
+    .brand-image {
+        margin-top: 10px !important;
+        text-align: center;
+        height: 2rem !important;
+        border-style: none;
+    }
+
+    .brand-link .brand-image {
+        float: none !important;
+    }
+
 </style>
 <aside class="main-sidebar sidebar-dark-primary custom-sidebar-bg elevation-4">
+
+
     <a href="{{ route('home') }}" class="brand-link">
-        <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }} Logo"
-            class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-light"><strong>OMZ</strong><span>
+        <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }} Logo" class="brand-image img-circle elevation-3">
     </a>
 
     <div class="sidebar">

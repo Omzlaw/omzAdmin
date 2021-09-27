@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::get('/home', [
     HomeController::class, 'index'
-])->name('home');
+])->name('home')->middleware('auth');
 
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
@@ -56,18 +56,31 @@ Route::resource('roles-assignment', App\Http\Controllers\RolesAssignmentControll
     ->only(['index', 'edit', 'update'])->middleware('auth');
 
 
-Route::resource('activityLogs', App\Http\Controllers\ActivityLogController::class);
+Route::resource('activityLogs', App\Http\Controllers\ActivityLogController::class)->middleware('auth');
 
-Route::get('chat', function () {    
-    return view('chat/index');
-})->name('chat');
+
 
 //pwa
 
 Route::get('offline', function () {    
     return view('vendor/laravelpwa/offline');
-});
+})->middleware('auth');
 
 
 
 
+
+Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
+
+Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
+
+Route::get('relation_field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
+
+Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
+
+Route::post('generator_builder/rollback', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
+
+Route::post(
+    'generator_builder/generate-from-file',
+    '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
+)->name('io_generator_builder_generate_from_file');

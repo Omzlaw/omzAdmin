@@ -13,3 +13,8 @@
 <script src="{{ asset('vendor/datatables/js/buttons.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('vendor/datatables/js/buttons.colVis.min.js') }}"></script>
 <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+
+
+{{-- <script type="text/javascript" src="{{ asset('vendor/datatables-download/js/pdfmake.min.js') }}"></script> --}}
+{{-- <script type="text/javascript" src="{{ asset('vendor/datatables-download/js/vfs_fonts.js') }}"></script> --}}
+{{-- <script type="text/javascript" src="{{ asset('vendor/datatables-download/js/datatables.min.js') }}"></script> --}}

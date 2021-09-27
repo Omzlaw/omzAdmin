@@ -4,3 +4,6 @@
 
 <link href="{{ asset('vendor/datatables/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{ asset('vendor/datatables/buttons/1.6.2/css/buttons.bootstrap4.min.css')}}" rel="stylesheet">
+
+
+<link rel="stylesheet" type="text/css" href="{{ asset('vendor/datatables-download/css/datatables.min.css')}}"/>
