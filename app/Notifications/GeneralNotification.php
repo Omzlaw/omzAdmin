@@ -11,14 +11,16 @@ class GeneralNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
+    private $notification = '';
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($notification)
     {
-        //
+        $this->notification = $notification;
     }
 
     /**
@@ -29,7 +31,7 @@ class GeneralNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['mail', 'database'];
+        return ['database'];
     }
 
     /**
@@ -54,10 +56,6 @@ class GeneralNotification extends Notification implements ShouldQueue
      */
     public function toArray($notifiable)
     {
-        return [
-            'id' => $this->notification->id,
-            'heading' => $this->notification->heading,
-            'body' => $this->notification->body,
-        ];
+        return $this->notification;
     }
 }

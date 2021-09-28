@@ -2,16 +2,20 @@
 
 namespace App\Models;
 
+use Approval\Traits\ApprovesChanges;
+use Approval\Traits\RequiresApproval;
+use Illuminate\Notifications\Notifiable;
+use Laratrust\Traits\LaratrustUserTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
     use HasFactory, Notifiable;
+    use RequiresApproval;
+    use ApprovesChanges;
 
     /**
      * The attributes that are mass assignable.
@@ -43,4 +47,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function receivedMessages() {
+        return $this->belongsTo(\App\Models\ChMessage::class, 'id', 'to_id');
+    }
 }

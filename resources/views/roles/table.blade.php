@@ -1,12 +1,12 @@
 <div class="table-responsive">
-    <table class="table" id="roles-table">
+    <table class="table text-nowrap table table-striped table-bordered" id="roles-table">
         <thead>
             <tr>
                 <th class="th">ID</th>
                 <th class="th">Display Name</th>
                 <th class="th">Name</th>
                 <th class="th"># Permissions</th>
-                <th class="th"></th>
+                <th class="th">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -43,4 +43,6 @@
             @endforeach
         </tbody>
     </table>
+    {{-- @include('adminlte-templates::common.paginate', ['records' => $roles]) --}}
+    {!! $roles->render() !!}
 </div>

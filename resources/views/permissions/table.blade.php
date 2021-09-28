@@ -1,12 +1,12 @@
 <div class="table-responsive">
-    <table class="table" id="tests-table">
+    <table class="table text-nowrap table table-striped table-bordered" id="tests-table">
         <thead>
             <tr>
                 <th class="th">ID</th>
                 <th class="th">Name/Code</th>
                 <th class="th">Display Name</th>
                 <th class="th">Description</th>
-                <th class="th"></th>
+                <th class="th">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -35,4 +35,6 @@
             @endforeach
         </tbody>
     </table>
+    {{-- @include('adminlte-templates::common.paginate', ['records' => $permissions]) --}}
+    {!! $permissions->render() !!}
 </div>

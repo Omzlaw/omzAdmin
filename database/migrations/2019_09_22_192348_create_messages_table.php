@@ -13,7 +13,7 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('ch_messages', function (Blueprint $table) {
             $table->bigInteger('id');
             $table->string('type');
             $table->bigInteger('from_id');
@@ -34,6 +34,6 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('ch_messages');
     }
 }

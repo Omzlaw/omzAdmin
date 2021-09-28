@@ -36,6 +36,7 @@
         "munafio/chatify": "^1.2",
         "santigarcor/laratrust": "^6.3",
         "silviolleite/laravelpwa": "^2.0",
+        "stephenlake/laravel-approval": "^1.1",
         "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {

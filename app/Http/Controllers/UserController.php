@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Notifications\GeneralNotification;
 use App\Http\Controllers\AppBaseController;
 
 class UserController extends AppBaseController
@@ -76,6 +77,9 @@ class UserController extends AppBaseController
         $user = $this->userRepository->create($this->saveProfilePicture($input));
 
         Flash::success('User saved successfully.');
+        $notification = "A new user was created successfully";
+        $user_active = Auth::user();
+        $user_active->notify(new GeneralNotification($notification));
         create_activity('create', 'User');
 
         return redirect(route('users.index'));

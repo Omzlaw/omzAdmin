@@ -1,12 +1,12 @@
 <div class="table-responsive">
-    <table class="table" id="roles-table">
+    <table class="table text-nowrap table table-striped table-bordered" id="roles-table">
         <thead>
             <tr>
                 {{-- <th class="th">Id</th> --}}
                 <th class="th">Name</th>
                 <th class="th"># Roles</th>
                 @if (config('laratrust.panel.assign_permissions_to_user'))<th class="th"># Permissions</th>@endif
-                <th class="th"></th>
+                <th class="th">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -34,4 +34,6 @@
             @endforeach
         </tbody>
     </table>
+    {{-- @include('adminlte-templates::common.paginate', ['records' => $users]) --}}
+    {!! $users->render() !!}
 </div>

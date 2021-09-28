@@ -168,6 +168,7 @@ return [
         InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
+        Approval\ApprovalServiceProvider::class,
 
         /*
          * Application Service Providers...

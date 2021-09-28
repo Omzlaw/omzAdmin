@@ -22,11 +22,6 @@
             <div class="card-body p-3">
                 @include('roles-assignment.table')
 
-                <div class="card-footer clearfix float-right">
-                    <div class="float-right">
-                        @include('adminlte-templates::common.paginate', ['records' => $users])
-                    </div>
-                </div>
             </div>
 
         </div>

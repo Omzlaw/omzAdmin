@@ -21,11 +21,6 @@
             <div class="card-body p-3">
                 @include('activity_logs.table')
 
-                <div class="card-footer clearfix float-right">
-                    <div class="float-right">
-                        
-                    </div>
-                </div>
             </div>
 
         </div>

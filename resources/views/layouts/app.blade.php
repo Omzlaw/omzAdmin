@@ -1,3 +1,13 @@
+<?php
+
+$user = Auth::user();
+$notifications = $user->unreadNotifications->take(5);
+$unread_notifications_count = $user->unreadNotifications()->count();
+$unread_messages = $user->receivedMessages()->where('seen', '=', 0)->count();
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -54,6 +64,15 @@
             border-color: #f9af48 !important;
         }
 
+        @font-face {
+            font-family: 'Mukta';
+            src: url({{ asset('fonts/Mukta/Mukta-Regular.ttf') }});
+        }
+
+        * {
+            font-family: 'Mukta';
+        }
+
     </style>
     @include('layouts/pwa_tags')
 </head>
@@ -70,15 +89,83 @@
                 </li>
             </ul>
 
+
+
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown user-menu">
+                    <a href="#"
+                        class="nav-link dropdown-toggle @if ($unread_notifications_count > 0) text-danger
+                            
+                        @endif"
+                        data-toggle="dropdown">
+                        <span><i class="fa fa-bell"></i>
+                            @if ($unread_notifications_count == 0)
+                                <small></small>
+                            @else
+                                <small>{{ $unread_notifications_count }}</small>
+                            @endif
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <li class="dropdown-menu-header">
+                            <div class="dropdown-header d-flex">
+                                <h4 class="notification-title mb-0 mr-auto">Notifications</h4>
+                                @if ($unread_notifications_count == 0)
+                                    <div class="badge badge-pill badge-light-primary"></div>
+                                @else
+                                    <div class="badge badge-pill badge-light-primary">
+                                        {{ $unread_notifications_count }}
+                                        New</div>
+                                @endif
+
+                            </div>
+                        </li>
+                        <li class="scrollable-container media-list p-3">
+                            <div class="media d-flex align-items-start">
+                                <div class="media-left">
+                                </div>
+                                <div class="media-body">
+                                    @if ($unread_notifications_count > 0)
+                                        @foreach ($notifications as $notification)
+                                            <a title="View"
+                                                href="{{ route('notifications.show', [$notification->id]) }}"
+                                                class='btn btn-default btn-xs'>
+                                                <p class="text-danger"><span
+                                                        class="">{{ substr($notification->data, 0, 10) }}...</p>
+                                        </a>
+
+                                            @endforeach
+
+                                        @else
+
+                                            <p class="
+                                                        text-success"><span
+                                                            class="">No new
+                                                    Notification</span>
+
+                                            </p>
+                                        @endif
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="
+                                                            dropdown-menu-footer">
+                                                            <a class="btn btn-primary btn-block"
+                                                                href="{{ route('notifications.index') }}">Read all
+                                                                notifications</a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         @if (isset(Auth::user()->profile_picture_path))
-                        <img src="{{ asset(Auth::user()->profile_picture_path) }}"
-                        class="user-image img-circle elevation-2" alt="User Image">
+                            <img src="{{ asset(Auth::user()->profile_picture_path) }}"
+                                class="user-image img-circle elevation-2" alt="User Image">
                         @else
-                        <img src="{{ asset('images/logo.png') }}"
-                        class="user-image img-circle elevation-2" alt="User Image">
+                            <img src="{{ asset('images/logo.png') }}" class="user-image img-circle elevation-2"
+                                alt="User Image">
                         @endif
                         <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                     </a>
@@ -86,11 +173,11 @@
                         <!-- User image -->
                         <li class="user-header" style="background-color: #232820">
                             @if (isset(Auth::user()->profile_picture_path))
-                            <img height="100" width="100" src="{{ asset(Auth::user()->profile_picture_path) }}"
-                            class="user-image img-circle elevation-2" alt="User Image">
+                                <img height="100" width="100" src="{{ asset(Auth::user()->profile_picture_path) }}"
+                                    class="user-image img-circle elevation-2" alt="User Image">
                             @else
-                            <img height="100" width="100" src="{{ asset('images/logo.png') }}"
-                            class="user-image img-circle elevation-2" alt="User Image">
+                                <img height="100" width="100" src="{{ asset('images/logo.png') }}"
+                                    class="user-image img-circle elevation-2" alt="User Image">
                             @endif
                             <p class="text-white">
                                 {{ Auth::user()->name }}

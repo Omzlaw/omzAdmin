@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="$MODEL_NAME_PLURAL_CAMEL$-table">
+    <table class="table text-nowrap table table-striped table-bordered" id="$MODEL_NAME_PLURAL_CAMEL$-table">
         <thead>
             <tr>
                 $FIELD_HEADERS$
@@ -23,4 +23,5 @@
         @endforeach
         </tbody>
     </table>
+    $PAGINATE$
 </div>
