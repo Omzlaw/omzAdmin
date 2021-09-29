@@ -40,7 +40,8 @@ class omz extends Command
     public function handle()
     {
         app()->make(Composer::class)->run(['install']);
-        Artisan::call('migrate');
+        Artisan::call('migrate:refresh');
         Artisan::call('db:seed');
+        Artisan::call('storage:link');
     }
 }
