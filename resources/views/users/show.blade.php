@@ -36,10 +36,10 @@
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 @if (isset(Auth::user()->profile_picture_path))
                                 <img height="100" width="100" src="{{ asset(Auth::user()->profile_picture_path) }}"
-                                class="user-image img-circle elevation-2" alt="User Image">
+                                class="user-image img-circle" alt="User Image">
                                 @else
-                                <img height="100" width="100" src="{{ asset('images/logo.png') }}"
-                                class="user-image img-circle elevation-2" alt="User Image">
+                                <img height="100" width="100" src="{{ asset('images/user.png') }}"
+                                class="user-image img-circle" alt="User Image">
                                 @endif
                             </div>
                             <span class="mt-3">{{ $user->email }}</span>

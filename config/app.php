@@ -235,6 +235,7 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+        'Token'=>\Dirape\Token\Facades\Facade::class
     ],
 
 ];

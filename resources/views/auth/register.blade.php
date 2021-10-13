@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Omz Admin - Register</title>
+    <title>Register - National Lottery Regulatory Commission</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -37,7 +37,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('register-custom/css/main.css') }}">
     <!--===============================================================================================-->
 
-    @include('layouts/pwa_tags')
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" />
+    {{-- @include('layouts/pwa_tags') --}}
 </head>
 
 <body style="background-color: #999999;">

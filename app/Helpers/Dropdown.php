@@ -46,8 +46,35 @@ if (!function_exists('enum_status')) {
     function enum_status($add_Select = TRUE)
     {
         $option['-1'] = 'Select...';
-        $option['1'] = 'Inactive';
-        $option['2'] = 'Active';
+        $option['0'] = 'Inactive';
+        $option['1'] = 'Active';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+if (!function_exists('enum_yes_no')) {
+    function enum_yes_no($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'Yes';
+        $option['0'] = 'No';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+if (!function_exists('enum_application_status')) {
+    function enum_application_status($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'Pending';
+        $option['2'] = 'Approved';
+        $option['3'] = 'Declined';
         if (!$add_Select) {
             unset($option['-1']);
         }
@@ -56,3 +83,30 @@ if (!function_exists('enum_status')) {
 }
 
 
+if (!function_exists('enum_shareholder_type')) {
+    function enum_shareholder_type($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'Director';
+        $option['0'] = 'Stakeholder';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+
+if (!function_exists('enum_game_played_status')) {
+    function enum_game_played_status($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'Played';
+        $option['2'] = 'Pending';
+        $option['3'] = 'Canceled';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}

@@ -18,6 +18,12 @@ return [
         'user' => [
             'profile' => 'r,u',
         ],
+        'applicant' => [
+
+        ],
+        'operator' => [
+            
+        ]
     ],
 
     'permissions_map' => [

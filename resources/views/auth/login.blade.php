@@ -17,9 +17,17 @@
     <!-- Style -->
     <link rel="stylesheet" href="{{ asset('login-custom/css/style.css') }}">
 
-    @include('layouts/pwa_tags')
+    {{-- @include('layouts/pwa_tags') --}}
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" />
 
-    <title>Omz Admin - Login</title>
+    <title>Login - National Lottery Regulatory Commission</title>
+
+    <style>
+        .control input:checked~.control__indicator {
+            background: #86C127 !important;
+        }
+
+    </style>
 
 
 </head>
@@ -29,14 +37,14 @@
 
     <div class="d-lg-flex half">
         <div class="bg order-1 order-md-2"
-            style="background-image: url('{{ asset('login-custom/images/bg_1.jpg') }}');"></div>
+            style="background-image: url('{{ asset('login-custom/images/bg_2.jpg') }}');"></div>
         <div class="contents order-2 order-md-1">
 
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-7">
-                        <h3>Login to <strong>Omz Admin</strong></h3>
-                        <p class="mb-4">Startup admin template for fast and rapid development.</p>
+                        <h3>Login<strong></strong></h3>
+                        <p class="mb-4">National Lottery Regulatory Commission.</p>
                         <form action="{{ url('/login') }}" method="post">
                             @csrf
 
@@ -65,18 +73,19 @@
                                     <input type="checkbox" checked="checked" name="remember" />
                                     <div class="control__indicator"></div>
                                 </label>
-                                <span class="ml-auto"><a href="{{ route('password.request') }}"
+                                {{-- <span class="ml-auto"><a href="{{ route('password.request') }}"
                                         class="forgot-pass">Forgot
-                                        Password</a></span>
+                                        Password</a></span> --}}
                             </div>
 
-                            <input type="submit" value="Log In" class="btn btn-block btn-primary">
+                            <input style="background-color: #86C127; border-color: #86C127;" type="submit"
+                                value="Log In" class="btn btn-block btn-primary">
 
-                            <p class="mt-3">
+                            {{-- <p class="mt-3">
                                 <a href="{{ route('register') }}" class="text-center"
-                                    style="color: #F9AF48">Register a new
+                                    style="color: #86C127">Register a new
                                     membership</a>
-                            </p>
+                            </p> --}}
 
                         </form>
                     </div>

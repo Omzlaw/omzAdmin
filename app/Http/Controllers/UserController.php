@@ -16,6 +16,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Notifications\GeneralNotification;
 use App\Http\Controllers\AppBaseController;
 
+
 class UserController extends AppBaseController
 {
     /** @var $userRepository UserRepository */

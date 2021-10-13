@@ -51,4 +51,12 @@ class User extends Authenticatable
     public function receivedMessages() {
         return $this->belongsTo(\App\Models\ChMessage::class, 'id', 'to_id');
     }
+
+    public function operator() {
+        return $this->hasOne(Operator::class);
+    }
+
+    public function applicant() {
+        return $this->hasOne(Applicant::class);
+    }
 }

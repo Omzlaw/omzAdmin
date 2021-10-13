@@ -1,18 +1,24 @@
 <style>
     .custom-sidebar-bg {
-        background-color: #232820;
+        background-color: #fff;
     }
 
     .nav-sidebar>.nav-item>.nav-link.active {
-        background-color: #eb212d !important;
+        background-color: #005C20 !important;
     }
 
-    a.nav-link.active.dropdown-item {
-        background-color: #eb212d !important;
+    a.nav-link.active {
+        background-color: #005C20 !important;
+        color: #fff !important;
     }
 
-    a.nav-link.dropdown-item:hover {
-        background-color: #eb212d !important;
+    a.nav-link.active {
+        background-color: #005C20 !important;
+    }
+
+    a.text-dark.nav-link:hover {
+        background-color: #005C20 !important;
+        color: #fff !important;
     }
 
 
@@ -50,7 +56,7 @@
 
     <a href="{{ route('home') }}" class="brand-link">
         <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }} Logo"
-            class="brand-image img-circle elevation-3">
+            class="brand-image">
     </a>
 
     <div class="sidebar">
